@@ -43,33 +43,33 @@ export default function FrontPage() {
   const portfolioImages = [
     {
       src: "/project1.jpg",
-      alt: "Social Media Campaign",
-      title: "Viral Social Campaign",
+      alt: "Social Media Marketing",
+      title: "Social Media Marketing",
     },
     {
       src: "/project2.jpg",
-      alt: "SEO Optimization",
-      title: "SEO Boost Project",
+      alt: "Performance Marketing",
+      title: "Performance Marketing",
     },
     {
       src: "/project3.jpg",
-      alt: "Content Marketing",
-      title: "Content Strategy",
+      alt: "Influencer Marketing",
+      title: "Influencer Marketing",
     },
     {
       src: "/project4.jpg",
-      alt: "Email Marketing",
-      title: "Email Campaign",
+      alt: "Website Design and Development",
+      title: "Website Design and Development",
     },
     {
       src: "/project5.jpg",
-      alt: "PPC Advertising",
-      title: "PPC Success Story",
+      alt: "Social media advertising",
+      title: "Social media advertising",
     },
     {
       src: "/project6.jpg",
-      alt: "Brand Identity",
-      title: "Brand Redesign",
+      alt: "Google Ads",
+      title: "Google Ads",
     },
   ];
 
@@ -82,7 +82,7 @@ export default function FrontPage() {
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <a href="#" className="text-2xl font-bold text-primary">
-            DigiBoost
+            <Image src={"/twelve.jpg"} alt="Twelve" width={60} height={60} />
           </a>
           <nav className="hidden md:flex space-x-8">
             <a
@@ -117,18 +117,18 @@ export default function FrontPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-500 to-cyan-400">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400">
           <div className="absolute inset-0 bg-black opacity-40"></div>
           <div className="relative z-10 text-center px-4">
             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 animate-fade-in-up">
-              Elevate Your Digital Presence
+              Ecommece media agency provider !
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8 animate-fade-in-up animation-delay-300">
               Innovative strategies. Measurable results. Unparalleled growth.
             </p>
             <Button
               size="lg"
-              className="animate-fade-in-up animation-delay-600 bg-white text-emerald-600 hover:bg-emerald-50"
+              className="animate-fade-in-up animation-delay-600 bg-white text-purple-600 hover:bg-purple-50"
             >
               Get Started
               <ChevronRight className="ml-2 h-4 w-4" />
@@ -144,23 +144,61 @@ export default function FrontPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                "Search Engine Optimization",
-                "Social Media Marketing",
-                "Content Creation",
+                {
+                  title: "Social Media Marketing",
+                  description:
+                    "Maximize your brand’s visibility on social platforms with tailored strategies that engage audiences and drive real-time interaction.",
+                  logo: "/socialmedia.png", // Example logo path
+                },
+                {
+                  title: "Performance Marketing",
+                  description:
+                    "Achieve measurable success with performance-driven marketing campaigns, designed to deliver ROI through precise targeting and data analysis.",
+                  logo: "/performance.png", // Example logo path
+                },
+                {
+                  title: "Influencer Marketing",
+                  description:
+                    "Leverage the power of influencers to amplify your brand’s message and connect authentically with your target audience for maximum reach.",
+                  logo: "/influencer.png", // Example logo path
+                },
+                {
+                  title: "Website Design and Development",
+                  description:
+                    "Create a seamless user experience with beautifully designed and highly functional websites that capture your brand’s essence.",
+                  logo: "/website.png", // Example logo path
+                },
+                {
+                  title: "Social Media Advertising",
+                  description:
+                    "Boost your online presence with strategic social media ads that target the right audience, driving clicks and conversions like never before.",
+                  logo: "/advertising.png", // Example logo path
+                },
+                {
+                  title: "Google Ads",
+                  description:
+                    "Dominate search engines and increase visibility with expertly managed Google Ads campaigns designed to bring in qualified traffic and leads.",
+                  logo: "/googleads.png", // Example logo path
+                },
               ].map((service, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <Star className="h-8 w-8 text-white" />
+                  <div className="flex justify-center mb-4">
+                    <Image
+                      src={service.logo}
+                      alt={`${service.title} Logo`}
+                      width={50}
+                      height={50}
+                      className="mx-auto"
+                    />
                   </div>
                   <h3 className="text-xl font-semibold text-center mb-4">
-                    {service}
+                    {service.title}
                   </h3>
                   <p className="text-gray-600 text-center">
-                    Boost your online visibility and drive targeted traffic to
-                    your website.
+                    {service.description}
                   </p>
                 </div>
               ))}
@@ -204,7 +242,7 @@ export default function FrontPage() {
             </h2>
             <div className="max-w-3xl mx-auto">
               <div className="bg-white rounded-lg shadow-lg p-8 relative">
-                <div className="text-4xl text-emerald-500 absolute top-4 left-4 opacity-20">
+                <div className="text-4xl text-purple-500 absolute top-4 left-4 opacity-20">
                   &quot;
                 </div>
                 <p className="text-lg mb-4">
@@ -229,7 +267,7 @@ export default function FrontPage() {
                     onClick={() => setCurrentTestimonial(index)}
                     className={`w-3 h-3 rounded-full ${
                       currentTestimonial === index
-                        ? "bg-emerald-500"
+                        ? "bg-purple-500"
                         : "bg-gray-300"
                     }`}
                   ></button>
@@ -241,7 +279,7 @@ export default function FrontPage() {
 
         <section
           id="contact"
-          className="py-20 bg-gradient-to-br from-emerald-600 via-teal-500 to-cyan-400 text-white"
+          className="py-20 bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400 text-white"
         >
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -273,7 +311,7 @@ export default function FrontPage() {
                 />
                 <Button
                   size="lg"
-                  className="w-full bg-white text-emerald-600 hover:bg-emerald-50"
+                  className="w-full bg-white text-purple-600 hover:bg-purple-50"
                 >
                   Send Message
                 </Button>
@@ -285,7 +323,9 @@ export default function FrontPage() {
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-bold mb-4 md:mb-0">DigiBoost</div>
+            <div className="text-2xl font-bold mb-4 md:mb-0">
+              <Image src={"/twelve.jpg"} alt="Twelve" height={60} width={60} />
+            </div>
             <nav className="flex space-x-4 mb-4 md:mb-0">
               <a href="#" className="hover:text-emerald-400 transition-colors">
                 Privacy Policy
